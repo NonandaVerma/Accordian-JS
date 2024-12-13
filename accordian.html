@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordian-FAQ</title>
+
+    <style>
+
+        *{
+            margin:0px;
+            padding:0px;
+            background-color: blueviolet;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .faq
+        {
+            width:800px;
+            margin:20px auto;  
+        }
+
+        .faq h3{
+            background-color: #fff;
+            padding:20px;
+            border-radius:8px;
+            cursor: pointer;
+        }
+
+        .faq p{
+            color:#fff;
+            padding:10px 20px;
+            display: none;
+            
+        }
+
+        .activeP{
+            display:block !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="faq">
+        <h3>Q1. Lorem ipsum dolor sit amet. ??</h3>
+        <p>1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, voluptatem possimus. Nihil iste velit voluptates veniam fugiat dolore natus explicabo.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q2. Lorem ipsum dolor sit amet. ??</h3>
+        <p>2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, voluptatem possimus. Nihil iste velit voluptates veniam fugiat dolore natus explicabo.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q3. Lorem ipsum dolor sit amet. ??</h3>
+        <p>3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, voluptatem possimus. Nihil iste velit voluptates veniam fugiat dolore natus explicabo.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q4. Lorem ipsum dolor sit amet. ??</h3>
+        <p>4. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, voluptatem possimus. Nihil iste velit voluptates veniam fugiat dolore natus explicabo.</p>
+    </div>
+    
+</body>
+
+<script>
+
+    let allQues=document.querySelectorAll(".faq h3");
+
+    allQues.forEach((v,i)=>{
+        v.addEventListener("click",()=>{
+            allQues.forEach((value,index)=>{
+                if(index!=i){
+                    allQues[index].nextElementSibling.classList.remove("activeP");
+                }
+            })
+            v.nextElementSibling.classList.toggle("activeP");
+
+            
+
+        })
+    })
+    
+    
+
+
+
+</script>
+</html>
